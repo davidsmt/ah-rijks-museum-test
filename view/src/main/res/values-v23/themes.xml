@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Main theme -->
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Status bar & navigation -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@color/backgroundPrimary</item>
+
+    </style>
+
+</resources>

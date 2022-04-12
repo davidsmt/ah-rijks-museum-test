@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Margin & paddings -->
+    <dimen name="space_extra_small">4dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_normal">12dp</dimen>
+    <dimen name="space_big">16dp</dimen>
+    <dimen name="space_extra_big">20dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+    <dimen name="space_extra_large">24dp</dimen>
+    <dimen name="space_mega">32dp</dimen>
+    <dimen name="space_extra_mega">64dp</dimen>
+    <dimen name="space_extra_extra_mega">96dp</dimen>
+
+    <!-- Avatar -->
+    <dimen name="avatar_size">96dp</dimen>
+    <dimen name="avatar_small_size">48dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="icon_extra_small_size">20dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_4">4dp</dimen>
+    <dimen name="progress_elevation">14dp</dimen>
+
+    <!-- Corner radius -->
+    <dimen name="corners_radius">5dp</dimen>
+
+    <!-- Animation durations -->
+    <integer name="anim_duration_long">600</integer>
+
+    <!-- Label item length -->
+    <integer name="label_max_length">10</integer>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    https://material.io/design/material-studies/rally.html-->
+
+    <!-- Color palette -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0083d6</color>
+    <color name="light_blue">#f2f4ff</color>
+    <color name="yellow">#ffd27d</color>
+    <color name="orange">#ff8c00</color>
+    <color name="red">#e8002f</color>
+    <color name="dark_grey">#817d83</color>
+    <color name="medium_grey">#b2b2b5</color>
+    <color name="light_grey">#66ffffff</color>
+    <color name="divider_transparent">#0D000000</color>
+
+    <!-- Brand colors-->
+    <color name="brandPrimary">@color/black</color>
+    <color name="brandSecondary">@color/medium_grey</color>
+    <color name="brandTertiary">@color/dark_grey</color>
+
+    <!-- Errors -->
+    <color name="brandError">@color/red</color>
+
+    <!-- Background colors-->
+    <color name="backgroundPrimary">@color/white</color>
+    <color name="backgroundSecondary">@color/light_grey</color>
+
+    <!-- Foreground colors-->
+    <color name="foregroundPrimary">@color/black</color>
+    <color name="foregroundSecondary">@color/medium_grey</color>
+    <color name="foregroundTertiary">@color/light_grey</color>
+
+    <!-- System colors-->
+    <color name="systemInactive">@color/medium_grey</color>
+    <color name="systemDivider">@color/white</color>
+
+    <!-- Labels text colors-->
+    <color name="primary_headline_text_color">@color/foregroundPrimary</color>
+    <color name="primary_subtitle_text_color">@color/foregroundPrimary</color>
+    <color name="primary_body_text_color">@color/foregroundPrimary</color>
+    <color name="primary_body_secondary_text_color">@color/foregroundSecondary</color>
+    <color name="primary_caption_text_color">@color/foregroundPrimary</color>
+    <color name="primary_overline_text_color">@color/foregroundPrimary</color>
+    <color name="primary_button_text_color">@color/foregroundPrimary</color>
+
+</resources>
