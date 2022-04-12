@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/space_big">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/space_big" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/space_big" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/space_big" />
+
+                <!--Header-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_title"
+                    style="@style/Header.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_small"
+                    app:layout_constraintEnd_toStartOf="@+id/art_object_details_object_number"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_top"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_object_number"
+                    style="@style/Label.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/art_object_details_title"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/art_object_details_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Object number" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_subtitle"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:layout_marginEnd="@dimen/space_small"
+                    app:layout_constraintEnd_toStartOf="@+id/art_object_details_dating"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Subtitle" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_dating"
+                    style="@style/Label.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="1900" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_long_title"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_subtitle"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Long title" />
+
+                <View
+                    android:id="@+id/art_object_details_header_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_long_title" />
+
+                <!--PrincipalOrFirstMaker-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_principal_maker_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_principal_or_first_maker"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_header_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_principal_maker"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_principal_maker_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="PrincipalOrFirstMaker" />
+
+                <View
+                    android:id="@+id/art_object_details_principal_maker_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_principal_maker" />
+
+                <!--Description-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_description_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_description"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_principal_maker_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_description"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_description_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Description" />
+
+                <View
+                    android:id="@+id/art_object_details_description_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_description" />
+
+                <!--Label-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_label_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_label"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_description_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_label"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_label_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Label" />
+
+                <View
+                    android:id="@+id/art_object_details_label_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_label" />
+
+                <!--Materials-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_materials_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_materials"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_label_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_materials"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_materials_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Materials" />
+
+                <View
+                    android:id="@+id/art_object_details_materials_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_materials" />
+
+                <!--Techniques-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_techniques_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_techniques"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_materials_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_techniques"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_techniques_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Techniques" />
+
+                <View
+                    android:id="@+id/art_object_details_techniques_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_techniques" />
+
+                <!--Production places-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_production_places_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_production_places"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_techniques_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_production_places"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_production_places_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Production places" />
+
+                <View
+                    android:id="@+id/art_object_details_production_places_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_production_places" />
+
+                <!--Documentation-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_documentation_title"
+                    style="@style/Label.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:text="@string/art_object_details_documentation"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_production_places_divider"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/art_object_details_documentation"
+                    style="@style/Label.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_small"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_documentation_title"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Documentation" />
+
+                <View
+                    android:id="@+id/art_object_details_documentation_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/divider_height"
+                    android:layout_marginTop="@dimen/space_normal"
+                    android:background="@color/systemDivider"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_documentation" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

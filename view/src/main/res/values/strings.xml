@@ -1,0 +1,29 @@
+<resources>
+
+    <string name="art_objects_screen_title">Art Objects</string>
+    <string name="art_object_details_screen_title">Art Object Details</string>
+
+    <!--List screen-->
+    <string name="no_results">No results</string>
+
+    <!--Details screen-->
+    <string name="art_object_details_principal_or_first_maker">Principal maker</string>
+    <string name="art_object_details_description">Description</string>
+    <string name="art_object_details_label">Label</string>
+    <string name="art_object_details_materials">Materials</string>
+    <string name="art_object_details_techniques">Techniques</string>
+    <string name="art_object_details_production_places">Production places</string>
+    <string name="art_object_details_documentation">Documentation</string>
+
+    <!--Pagination-->
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+
+    <!--Errors-->
+    <string name="socket_time_out_error">Request timed out while trying to connect. Please ensure you have a strong signal and try again.</string>
+    <string name="unknown_network_error">An unexpected error has occurred. Please check your network connection and try again.</string>
+    <string name="connect_error">Could not connect to the server. Please check your internet connection and try again.</string>
+    <string name="unknown_host_error">Could not connect to the server at the moment. Please try again in a few minutes.</string>
+
+</resources>
+

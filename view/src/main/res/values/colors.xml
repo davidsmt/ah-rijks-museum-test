@@ -33,8 +33,8 @@
     <color name="foregroundTertiary">@color/light_grey</color>
 
     <!-- System colors-->
-    <color name="systemInactive">@color/medium_grey</color>
-    <color name="systemDivider">@color/white</color>
+    <color name="systemInactive">@color/dark_grey</color>
+    <color name="systemDivider">@color/medium_grey</color>
 
     <!-- Labels text colors-->
     <color name="primary_headline_text_color">@color/foregroundPrimary</color>

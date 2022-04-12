@@ -2,6 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation">
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment_art_objects_fragment">
+
+    <fragment
+        android:id="@+id/fragment_art_objects_fragment"
+        android:name="com.ahrijksmuseum.view.screens.artobjects.ArtObjectsFragment"
+        android:label="@string/art_objects_screen_title"
+        tools:layout="@layout/fragment_art_objects_fragment" >
+        <action
+            android:id="@+id/action_fragment_art_objects_fragment_to_art_object_details_fragment"
+            app:destination="@id/fragment_art_object_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_art_object_details_fragment"
+        android:name="com.ahrijksmuseum.view.screens.artobjectdetails.ArtObjectDetailsFragment"
+        android:label="@string/art_object_details_screen_title">
+        <argument
+            android:name="objectNumber"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

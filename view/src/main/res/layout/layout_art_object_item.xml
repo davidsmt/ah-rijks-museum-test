@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/space_big"
+    android:layout_marginTop="@dimen/space_normal"
+    android:layout_marginEnd="@dimen/space_big">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/art_object_header_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="@dimen/art_object_max_height"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/art_object_title"
+        style="@style/Label.Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:paddingStart="@dimen/space_extra_small"
+        android:paddingTop="@dimen/space_normal"
+        android:paddingEnd="@dimen/space_extra_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/art_object_header_image"
+        tools:text="Title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/art_object_long_title"
+        style="@style/Label.Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:paddingStart="@dimen/space_extra_small"
+        android:paddingTop="@dimen/space_extra_small"
+        android:paddingEnd="@dimen/space_extra_small"
+        android:paddingBottom="@dimen/space_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/art_object_title"
+        tools:text="Long title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

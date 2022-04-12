@@ -1,5 +1,7 @@
 package com.ahrijksmuseum.view.di
 
+import com.ahrijksmuseum.view.screens.artobjectdetails.ArtObjectDetailsFragment
+import com.ahrijksmuseum.view.screens.artobjects.ArtObjectsFragment
 import dagger.Subcomponent
 
 @Subcomponent
@@ -10,6 +12,10 @@ interface ViewComponent {
     interface Factory {
         fun create(): ViewComponent
     }
+
+    fun inject(fragment: ArtObjectsFragment)
+
+    fun inject(fragment: ArtObjectDetailsFragment)
 
 }
 
