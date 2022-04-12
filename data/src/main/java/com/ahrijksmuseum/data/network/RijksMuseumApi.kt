@@ -8,13 +8,13 @@ import retrofit2.http.Query
 
 interface RijksMuseumApi {
 
-    @GET("collection?key=0fiuZFh4&s=artist")
+    @GET("collection?s=artist")
     suspend fun loadArtObjects(
         @Query("p") page: Int,
         @Query("ps") pageSize: Int
     ): ArtObjectsResponse
 
-    @GET("collection/{objectNumber}?key=0fiuZFh4")
+    @GET("collection/{objectNumber}")
     suspend fun loadArtObjectDetails(@Path("objectNumber") objectNumber: String): ArtObjectDetailsResponse
 
 }
