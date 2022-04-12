@@ -1,0 +1,16 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+dependencies {
+    implementation project(Modules.domain)
+
+    implementation Libraries.lifecycleViewModel
+    implementation Libraries.lifecycleRuntime
+    implementation Libraries.lifecycleLiveData
+    kapt Libraries.lifecycleCompiler
+
+    implementation Libraries.pagingCommonKtx
+
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.coroutines
+    testImplementation TestLibraries.mockk
+}

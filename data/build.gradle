@@ -1,0 +1,18 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation project(Modules.domain)
+
+    implementation Libraries.retrofit
+    implementation Libraries.loggingInterceptor
+    implementation Libraries.moshi
+    implementation Libraries.moshiConverter
+    kapt Libraries.moshiCodegen
+
+    implementation Libraries.pagingCommonKtx
+
+    implementation Libraries.roomKtx
+    kapt Libraries.roomCompiler
+    implementation Libraries.gson
+}

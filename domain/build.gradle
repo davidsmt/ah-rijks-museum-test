@@ -1,0 +1,18 @@
+apply from: "$rootDir/common-kotlin-library.gradle"
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+    }
+}
+
+dependencies {
+    implementation Libraries.pagingCommonKtx
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.coroutines
+    testImplementation TestLibraries.mockk
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

@@ -1,0 +1,32 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'kotlin-parcelize'
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(Modules.presentation)
+
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.appcompatResources
+    implementation SupportLibraries.design
+    implementation SupportLibraries.cardview
+    implementation SupportLibraries.recyclerview
+    implementation SupportLibraries.constraintLayout
+    implementation SupportLibraries.swipeRefreshLayout
+    implementation Libraries.lifecycleRuntime
+    implementation Libraries.lifecycleLiveData
+    implementation Libraries.navigationRuntime
+    implementation Libraries.navigationFragment
+    implementation Libraries.fragmentKtx
+    implementation Libraries.navigationUi
+    implementation Libraries.glide
+    implementation Libraries.retrofit
+    implementation Libraries.pagingCommonKtx
+    implementation Libraries.pagingRuntimeKtx
+    kapt Libraries.lifecycleCompiler
+}
