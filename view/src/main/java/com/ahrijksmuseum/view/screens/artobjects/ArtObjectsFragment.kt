@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
 import com.ahrijksmuseum.presentation.factory.ViewModelFactory
 import com.ahrijksmuseum.presentation.viewmodels.ArtObjectsViewModel
 import com.ahrijksmuseum.view.R
@@ -65,7 +63,6 @@ class ArtObjectsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
         setupListeners()
-        viewModel.start()
     }
 
     override fun onDestroyView() {
@@ -98,20 +95,20 @@ class ArtObjectsFragment : Fragment() {
                 )
             }
 
-            lifecycleScope.launchWhenResumed {
+            viewLifecycleOwner.lifecycleScope.launchWhenCreated {
                 artObjectsAdapter.loadStateFlow.collectLatest { loadStates ->
                     binding.swipeRefreshContainer.isRefreshing =
-                        loadStates.mediator?.refresh is LoadState.Loading
+                        loadStates.refresh is LoadState.Loading
                 }
             }
 
-            lifecycleScope.launchWhenResumed {
+            viewLifecycleOwner.lifecycleScope.launchWhenCreated {
                 viewModel.uiState.collectLatest {
                     artObjectsAdapter.submitData(it)
                 }
             }
 
-            lifecycleScope.launchWhenResumed {
+            viewLifecycleOwner.lifecycleScope.launchWhenCreated {
                 artObjectsAdapter.loadStateFlow
                     .distinctUntilChangedBy { it.refresh }
                     .filter { it.refresh is LoadState.Error }

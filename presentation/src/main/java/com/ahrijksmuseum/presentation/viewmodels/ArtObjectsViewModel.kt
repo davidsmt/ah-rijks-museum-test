@@ -27,19 +27,20 @@ class ArtObjectsViewModel @Inject constructor(
         MutableStateFlow(PagingData.empty())
     val uiState: StateFlow<PagingData<ArtObjectUiModel>> = state
 
-    fun start() {
+    init {
         viewModelScope.launch(coroutineContextProvider.io()) {
             loadArtObjectsUseCase()
                 .cachedIn(viewModelScope).map { pagingData ->
                     pagingData.map {
                         RijksMuseumUiMapper.map(it)
-                    }.insertSeparators { before: ArtObjectUiModel.ArtObject?, after: ArtObjectUiModel.ArtObject? ->
-                        if (after != null && (before == null || before.principalOrFirstMaker != after.principalOrFirstMaker)) {
-                            ArtObjectUiModel.ArtistHeader(after.principalOrFirstMaker)
-                        } else {
-                            null
-                        }
                     }
+                        .insertSeparators { before: ArtObjectUiModel.ArtObject?, after: ArtObjectUiModel.ArtObject? ->
+                            if (after != null && (before == null || before.principalOrFirstMaker != after.principalOrFirstMaker)) {
+                                ArtObjectUiModel.ArtistHeader(after.principalOrFirstMaker)
+                            } else {
+                                null
+                            }
+                        }
                 }.collectLatest {
                     state.value = it
                 }
