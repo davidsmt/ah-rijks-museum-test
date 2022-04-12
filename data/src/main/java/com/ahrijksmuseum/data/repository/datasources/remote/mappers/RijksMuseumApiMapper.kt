@@ -44,17 +44,17 @@ object RijksMuseumApiMapper {
             ) { "principalOrFirstMaker is required" },
             materials = apiModel.artObject?.materials?.filter {
                 !it.isNullOrBlank()
-            }?.joinToString(", "),
+            }?.distinct()?.joinToString(", "),
             techniques = apiModel.artObject?.techniques?.filter {
                 !it.isNullOrBlank()
-            }?.joinToString(", "),
+            }?.distinct()?.joinToString(", "),
             productionPlaces = apiModel.artObject?.productionPlaces?.filter {
                 !it.isNullOrBlank()
-            }?.joinToString(", "),
+            }?.distinct()?.joinToString(", "),
             dating = apiModel.artObject?.dating?.presentingDate,
             documentation = apiModel.artObject?.documentation?.filter {
                 !it.isNullOrBlank()
-            }?.joinToString(", "),
+            }?.distinct()?.joinToString(", "),
         )
     }
 
