@@ -52,8 +52,7 @@
                     style="@style/Header.Title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/space_small"
-                    app:layout_constraintEnd_toStartOf="@+id/art_object_details_object_number"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
                     app:layout_constraintTop_toTopOf="@+id/guideline_top"
                     app:layout_constraintVertical_chainStyle="packed"
@@ -62,11 +61,12 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/art_object_details_object_number"
                     style="@style/Label.Regular"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@+id/art_object_details_title"
+                    android:layout_marginTop="@dimen/space_small"
                     app:layout_constraintEnd_toEndOf="@+id/guideline_end"
-                    app:layout_constraintTop_toTopOf="@+id/art_object_details_title"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_title"
                     app:layout_constraintVertical_chainStyle="packed"
                     tools:text="Object number" />
 
@@ -75,11 +75,11 @@
                     style="@style/Label.Regular"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_small"
+                    android:layout_marginTop="@dimen/space_extra_small"
                     android:layout_marginEnd="@dimen/space_small"
                     app:layout_constraintEnd_toStartOf="@+id/art_object_details_dating"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_title"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_object_number"
                     app:layout_constraintVertical_chainStyle="packed"
                     tools:text="Subtitle" />
 
@@ -88,9 +88,9 @@
                     style="@style/Label.Regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_small"
+                    android:layout_marginTop="@dimen/space_extra_small"
                     app:layout_constraintEnd_toEndOf="@+id/guideline_end"
-                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_title"
+                    app:layout_constraintTop_toBottomOf="@+id/art_object_details_object_number"
                     app:layout_constraintVertical_chainStyle="packed"
                     tools:text="1900" />
 

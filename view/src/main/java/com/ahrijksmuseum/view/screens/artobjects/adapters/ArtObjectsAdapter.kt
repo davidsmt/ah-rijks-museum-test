@@ -10,6 +10,10 @@ import com.ahrijksmuseum.view.R
 import com.ahrijksmuseum.view.databinding.LayoutArtObjectItemBinding
 import com.ahrijksmuseum.view.databinding.LayoutArtistHeaderItemBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DecodeFormat
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 
 
 class ArtObjectsAdapter(
@@ -70,6 +74,13 @@ class ArtObjectsAdapter(
                         Glide
                             .with(binding.root.context)
                             .load(uiModel.imageUrl)
+                            .apply(
+                                RequestOptions()
+                                    .centerCrop()
+                                    .format(DecodeFormat.PREFER_ARGB_8888)
+                                    .override(SIZE_ORIGINAL)
+                            )
+                            .diskCacheStrategy(DiskCacheStrategy.ALL)
                             .into(binding.artObjectHeaderImage)
 
                         artObjectTitle.text = uiModel.title.orEmpty()
