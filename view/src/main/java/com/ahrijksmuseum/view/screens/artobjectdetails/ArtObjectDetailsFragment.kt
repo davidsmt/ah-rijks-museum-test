@@ -140,10 +140,17 @@ class ArtObjectDetailsFragment : Fragment() {
     }
 
     private fun showErrorDialog(error: Throwable?) {
-        binding.content.isRefreshing = false
+        with(binding) {
+            loading.visible(false)
+            content.visible(false)
+            content.isRefreshing = false
+        }
 
         AlertDialog.Builder(context)
             .setMessage(UiErrorsMapper(resources).map(error))
+            .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                dialog.dismiss()
+            }
             .create()
             .show()
     }
